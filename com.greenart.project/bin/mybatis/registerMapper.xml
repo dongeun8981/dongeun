@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.registerMapper">
+
+	<!-- 매개변수(#) & 결과값 -->
+	<select id="selectAll" resultType="model.Register">
+		SELECT * FROM REGISTER ORDER BY ID DESC
+	</select>
+
+	<select id="selectCount" resultType = "int">
+	SELECT COUNT(ID) FROM REGISTER
+	</select>
+
+	<insert id="memberInsert" parameterType="model.Register">
+		INSERT INTO REGISTER SET
+		USERID = #{userid},
+		PASSWD = #{passwd},
+		NAME = #{name},
+		ADDR = #{addr},
+		EMAIL = #{email},
+		AGE = #{age}
+		
+
+	</insert>
+
+	<update id="updateMember" parameterType="model.Register">
+		UPDATE REGISTER SET
+		USERID = #{userid},
+		PASSWD = #{passwd},
+		NAME = #{name},
+		ADDR = #{addr},
+		EMAIL = #{email},
+		AGE = #{age}
+		
+		WHERE ID = #{14}
+
+	</update>
+
+	<delete id="deleteMember" parameterType="int">
+		DELETE FROM REGISTER WHERE ID = #{id}
+	</delete>
+
+</mapper>
