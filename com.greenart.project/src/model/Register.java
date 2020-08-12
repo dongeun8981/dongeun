@@ -81,5 +81,4 @@ public class Register {
 		return str;
 
 	}
-
 }
